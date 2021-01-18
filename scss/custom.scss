@@ -1,0 +1,48 @@
+// Custom.scss
+$theme-colors: (
+    "primary": #c14ec9,
+    "secondary": #fff,
+    "dark": #19191a,
+    "light": #343a40
+);
+
+$primary: #c14ec9;
+$secondary: #fff;
+$dark: #19191a;
+$light: #343a40;
+$main-font: 'Roboto', sans-serif;
+
+///////////////////////////////////////////////Expense tracker styling
+
+#main-container {
+    border-radius: 5px;
+    color: $secondary;
+    font-family: $main-font;
+
+    #headline {
+        width: 50%;
+
+        h1 {
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+        }
+    }
+
+    #form-container {
+        
+        h3 {
+            color: $primary;
+        }
+
+        input:focus {
+            box-shadow: 0 0 15px $primary;
+        }
+
+        select:focus {
+            box-shadow: 0 0 15px $primary;
+        }
+    }
+}
+// Option A: Include all of Bootstrap
+
+@import "../node_modules/bootstrap/scss/bootstrap";
