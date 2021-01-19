@@ -20,7 +20,53 @@
 #main-container #form-container select:focus {
   box-shadow: 0 0 15px #c14ec9;
 }
+#main-container #summary-container .summary-text {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: #c14ec9;
+  font-size: 1.7rem;
+  width: 33%;
+}
+#main-container #summary-container .amount {
+  font-size: 1.3rem;
+}
+#main-container #history-headline {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+#main-container #history-log {
+  font-size: 1.3rem;
+}
+#main-container #history-log .log {
+  border-bottom: 1px solid #343a40;
+}
+#main-container #history-log .log-description-text {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: #c14ec9;
+  width: 33%;
+}
+#main-container #history-log .log-data {
+  width: 33%;
+}
 
+@media only screen and (max-width: 610px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h4, .summary-text {
+    font-size: 15px !important;
+    letter-spacing: normal !important;
+    margin: 0 0.5rem !important;
+  }
+
+  .log-data {
+    letter-spacing: normal !important;
+    font-size: 15px !important;
+  }
+}
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors

@@ -28,6 +28,8 @@ $main-font: 'Roboto', sans-serif;
         }
     }
 
+    //Form
+
     #form-container {
         
         h3 {
@@ -42,7 +44,72 @@ $main-font: 'Roboto', sans-serif;
             box-shadow: 0 0 15px $primary;
         }
     }
+
+    // Summary
+
+    #summary-container {
+
+        .summary-text {
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            color: $primary;
+            font-size: 1.7rem;
+            width: 33%;
+        }
+
+        .amount {
+            font-size: 1.3rem;
+        }
+    }
+
+    //History headline
+    #history-headline {
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+    }
+
+    // History log
+
+    #history-log {
+        font-size: 1.3rem;
+
+        .log {
+            border-bottom: 1px solid $light;
+        }
+
+        .log-description-text {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            color: $primary;
+            width: 33%;
+        }
+
+        .log-data {
+            width: 33%;
+        }
+    }
 }
+
+@media only screen and (max-width: 610px) {
+
+    h1 {
+        font-size: 2rem !important;
+    }
+
+    h4, .summary-text {
+        font-size: 15px !important;
+        letter-spacing: normal !important;
+        margin: 0 0.5rem !important;
+    }
+
+    .log-data {
+        letter-spacing: normal !important;
+        font-size: 15px !important;
+    }
+  }
+
+
 // Option A: Include all of Bootstrap
 
 @import "../node_modules/bootstrap/scss/bootstrap";
