@@ -5,6 +5,7 @@ window.addEventListener('load', (e) => {
     if (records !== []) {
         incomeTotal();
         expenseTotal();
+        balance();
     }
 }); 
 
@@ -25,7 +26,11 @@ document.querySelector('#form').addEventListener('submit', (e) => {
         description: description,
         amount: amount
     });
+
     saveRecords();
     incomeTotal();
     expenseTotal();
+    balance();
 });
+
+console.log(expenseTotal());

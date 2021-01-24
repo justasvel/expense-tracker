@@ -38,6 +38,8 @@ const incomeTotal = () => {
     });
     count = count.toFixed(2);
     incomeNumber.textContent = count;
+
+    return count;
 }
 
 //Calculate expense total
@@ -53,4 +55,14 @@ const expenseTotal = () => {
     });
     count = count.toFixed(2);
     expensesNumber.textContent = count;
+
+    return count;
+}
+
+//Calculate balance 
+const balance = () => {
+    const balanceNumber = document.querySelector('#balance-number');
+
+    let balanceAmount = (parseInt(incomeTotal() * 100) / 100) + (parseInt(expenseTotal() * 100) / 100);
+    balanceNumber.textContent = balanceAmount;
 }
