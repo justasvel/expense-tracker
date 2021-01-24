@@ -62,7 +62,15 @@ const expenseTotal = () => {
 //Calculate balance 
 const balance = () => {
     const balanceNumber = document.querySelector('#balance-number');
+    const balanceContainer = document.querySelector('#balance');
 
     let balanceAmount = (parseInt(incomeTotal() * 100) / 100) + (parseInt(expenseTotal() * 100) / 100);
     balanceNumber.textContent = balanceAmount;
+
+    if (balanceAmount < 0) {
+        balanceContainer.style.color = 'red';
+        alert('Your balance has dropped below 0');
+    } else if (balanceAmount > 0) {
+        balanceContainer.style.color = 'green';
+    }
 }
