@@ -7,7 +7,8 @@ window.addEventListener('load', (e) => {
         expenseTotal();
         balance();
     }
-}); 
+    recordsList(records);
+});
 
 document.querySelector('#form').addEventListener('submit', (e) => {
     e.preventDefault();
@@ -26,11 +27,12 @@ document.querySelector('#form').addEventListener('submit', (e) => {
         description: description,
         amount: amount
     });
-
+    clearInputs();
     saveRecords();
     incomeTotal();
     expenseTotal();
     balance();
+    recordsList(records);
 });
 
-console.log(expenseTotal());
+// recordsList(records);

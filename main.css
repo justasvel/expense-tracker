@@ -4,6 +4,9 @@
   color: #fff;
   font-family: "Roboto", sans-serif;
 }
+#main-container .d-none {
+  display: none;
+}
 #main-container #headline {
   width: 50%;
 }
@@ -50,6 +53,23 @@
 #main-container #history-log .log-data {
   width: 33%;
 }
+#main-container #history-list {
+  font-size: 1.3rem;
+}
+#main-container #history-list .log {
+  border-bottom: 1px solid #343a40;
+  position: relative;
+}
+#main-container #history-list .log-data {
+  width: 33%;
+}
+#main-container #history-list .x-button {
+  background: none;
+  border: none;
+  color: #c14ec9;
+  position: absolute;
+  right: 0;
+}
 
 @media only screen and (max-width: 610px) {
   h1 {
@@ -60,6 +80,10 @@
     font-size: 15px !important;
     letter-spacing: normal !important;
     margin: 0 0.5rem !important;
+  }
+
+  .amount {
+    font-size: 15px !important;
   }
 
   .log-data {

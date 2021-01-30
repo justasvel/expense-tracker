@@ -19,6 +19,10 @@ $main-font: 'Roboto', sans-serif;
     color: $secondary;
     font-family: $main-font;
 
+    .d-none {
+        display: none;
+    }
+
     #headline {
         width: 50%;
 
@@ -89,6 +93,29 @@ $main-font: 'Roboto', sans-serif;
             width: 33%;
         }
     }
+
+    // History list
+
+    #history-list {
+        font-size: 1.3rem;
+
+        .log {
+            border-bottom: 1px solid $light;
+            position: relative;
+        }
+
+        .log-data {
+            width: 33%;
+        }
+
+        .x-button {
+            background: none;
+            border: none;
+            color: $primary;
+            position: absolute;
+            right: 0;
+        }
+    }
 }
 
 @media only screen and (max-width: 610px) {
@@ -101,6 +128,10 @@ $main-font: 'Roboto', sans-serif;
         font-size: 15px !important;
         letter-spacing: normal !important;
         margin: 0 0.5rem !important;
+    }
+
+    .amount {
+        font-size: 15px !important;
     }
 
     .log-data {

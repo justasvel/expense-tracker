@@ -32,7 +32,7 @@ const incomeTotal = () => {
     let count = 0;
 
     recordsArray.forEach(record => {
-        if(record.type == 2) {
+        if (record.type == 2) {
             count += record.amount;
         }
     });
@@ -49,7 +49,7 @@ const expenseTotal = () => {
     let count = 0;
 
     recordsArray.forEach(record => {
-        if(record.type == 1) {
+        if (record.type == 1) {
             count += record.amount;
         }
     });
@@ -65,12 +65,83 @@ const balance = () => {
     const balanceContainer = document.querySelector('#balance');
 
     let balanceAmount = (parseInt(incomeTotal() * 100) / 100) + (parseInt(expenseTotal() * 100) / 100);
-    balanceNumber.textContent = balanceAmount;
+    balanceNumber.textContent = balanceAmount.toFixed(2);
 
     if (balanceAmount < 0) {
         balanceContainer.style.color = 'red';
-        alert('Your balance has dropped below 0');
     } else if (balanceAmount > 0) {
         balanceContainer.style.color = 'green';
     }
+
+    return balanceNumber;
+}
+
+//Remove record
+const removeRecord = (id) => {
+    const recordIndex = records.findIndex((record) => id === record.id);
+
+    if (recordIndex > -1) {
+        records.splice(recordIndex, 1);
+        saveRecords();
+        recordsList(records);
+    }
+}
+
+//Generate records list
+const recordsList = (records) => {
+    //Select history log
+    let historyLog = document.querySelector('#history-list');
+
+    //Removes all previous records to avoid duplicates
+    historyLog.innerHTML = '';
+
+    //Print out records
+    if (records.length > 0) {
+        records.forEach((record) => {
+
+            const recordRow = document.createElement('div');
+            const recordLog = document.createElement('div');
+            const recordDate = document.createElement('div');
+            const recordDescription = document.createElement('div');
+            const recordDollerSign = document.createElement('div');
+
+            //Classes for records
+            recordRow.classList.add('row');
+            recordLog.classList.add('log', 'd-flex', 'justify-content-around', 'py-2', 'col');
+            recordDate.classList.add('log-data');
+            recordDescription.classList.add('log-data');
+            recordDollerSign.classList.add('log-data');
+
+            //Generate log layout
+            historyLog.appendChild(recordRow);
+            recordRow.appendChild(recordLog);
+            recordLog.appendChild(recordDate);
+            recordLog.appendChild(recordDescription);
+            recordLog.appendChild(recordDollerSign);
+
+            recordDate.textContent = record.date;
+            recordDescription.textContent = record.description;
+            recordDollerSign.innerHTML = ` <span>$ ${record.amount}<span>`;
+
+            //Generate x button
+            const deleteButton = document.createElement('button');
+            deleteButton.innerHTML = 'x';
+            deleteButton.classList.add('x-button');
+            recordLog.appendChild(deleteButton);
+
+            deleteButton.addEventListener('click', () => {
+                let id = record.id;
+                removeRecord(id);
+                incomeTotal();
+                expenseTotal();
+                balance();
+                console.log(records);
+            })
+        });
+    }
+}
+
+//Clear form inputs
+const clearInputs = () => {
+    document.querySelector('#form').reset();
 }
