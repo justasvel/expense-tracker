@@ -90,6 +90,10 @@
     letter-spacing: normal !important;
     font-size: 15px !important;
   }
+
+  .log-description-text {
+    font-size: 12px !important;
+  }
 }
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)

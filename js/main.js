@@ -7,6 +7,7 @@ window.addEventListener('load', (e) => {
         expenseTotal();
         balance();
     }
+    // displayHistory(records);
     recordsList(records);
 });
 
@@ -33,6 +34,10 @@ document.querySelector('#form').addEventListener('submit', (e) => {
     expenseTotal();
     balance();
     recordsList(records);
+    displayHistory(records);
 });
 
-// recordsList(records);
+document.querySelector('#history-btn').addEventListener('click', (e) => {
+    clearStorage();
+    window.location.reload();
+})

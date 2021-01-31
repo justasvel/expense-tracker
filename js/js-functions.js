@@ -9,9 +9,24 @@ const getSavedRecords = () => {
     }
 }
 
+//Display History Div
+const displayHistory = (records) => {
+    let div = document.querySelector('#history-btn');
+    if (records != []) {
+        div.classList.remove('d-none');
+    } else if (records == []) {
+        div.classList.add('.d-none');
+    }
+}
+
 //Saves records to localStorage
 const saveRecords = () => {
     localStorage.setItem('records', JSON.stringify(records));
+}
+
+// Clear local storage
+const clearStorage = () => {
+    localStorage.removeItem('records');
 }
 
 //Checks expense type
