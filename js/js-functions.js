@@ -150,7 +150,6 @@ const recordsList = (records) => {
                 incomeTotal();
                 expenseTotal();
                 balance();
-                console.log(records);
             })
         });
     }

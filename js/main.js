@@ -37,7 +37,9 @@ document.querySelector('#form').addEventListener('submit', (e) => {
     displayHistory(records);
 });
 
+//Delete all history
 document.querySelector('#history-btn').addEventListener('click', (e) => {
     clearStorage();
     window.location.reload();
+    displayHistory(records);
 })
