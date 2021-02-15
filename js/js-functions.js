@@ -12,7 +12,7 @@ const getSavedRecords = () => {
 //Display History Div
 const displayHistory = (records) => {
     let div = document.querySelector('#history-btn');
-    if (records != []) {
+    if (records.length > 1) {
         div.classList.remove('d-none');
     } else if (records == []) {
         div.classList.add('.d-none');
